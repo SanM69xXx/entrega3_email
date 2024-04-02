@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">email_3e</string>
+    <string name="default_name">emisor</string>
+    <string name="default_description">asunto</string>
+    <string name="default_hour">0:00am</string>
+    <string name="default_resent">Default resent</string>
+    <string name="main_title">Email??</string>
+</resources>
