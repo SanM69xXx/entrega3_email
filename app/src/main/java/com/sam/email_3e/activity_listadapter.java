@@ -12,18 +12,17 @@ import android.widget.TextView;
 public class activity_listadapter extends BaseAdapter {
     Context Contexto;
     String[] Nombres, Horas, Descripciones;
-    Boolean[] Reenviado;
+
     boolean[] Leido;
     int[] imageID;
     LayoutInflater inflater;
 
-    public activity_listadapter(Context contexto, String[] nombres, String[] horas, int[] imageID, String[] descripciones, Boolean[] reenviado, boolean[] leido){
+    public activity_listadapter(Context contexto, String[] nombres, String[] horas, int[] imageID, String[] descripciones, boolean[] leido){
         this.Contexto = contexto;
         this.Nombres = nombres;
         this.Horas = horas;
         this.imageID = imageID;
         this.Descripciones = descripciones;
-        this.Reenviado = reenviado;
         this.Leido = leido;
         inflater = LayoutInflater.from(contexto);
     }
@@ -48,20 +47,19 @@ public class activity_listadapter extends BaseAdapter {
         ImageView fotoEmail = view.findViewById(R.id.foto);
         TextView nombreEmisor = view.findViewById(R.id.nombre);
         TextView horaEmail = view.findViewById(R.id.horaEmail);
-        TextView reenviado = view.findViewById(R.id.reenviadoEmail);
         fotoEmail.setImageResource(imageID[i]);
-        reenviado.setText(resentParser(Reenviado[i]));
+
         horaEmail.setText(Horas[i]);
         nombreEmisor.setText(Nombres[i]);
 
         if (Leido[i]){
             nombreEmisor.setTypeface(null, Typeface.NORMAL);
             horaEmail.setTypeface(null, Typeface.NORMAL);
-            reenviado.setTypeface(null, Typeface.NORMAL);
+
         } else {
             nombreEmisor.setTypeface(null, Typeface.BOLD);
             horaEmail.setTypeface(null, Typeface.BOLD);
-            reenviado.setTypeface(null, Typeface.BOLD);
+
         }
 
         return view;

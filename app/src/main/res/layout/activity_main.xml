@@ -11,14 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp">
 
         <TextView
             android:id="@+id/titulo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="05dp"
+            android:backgroundTintMode="multiply"
             android:text="@string/main_title"
             android:textSize="24sp" />
     </LinearLayout>
@@ -33,13 +35,13 @@
 
         <ListView
             android:id="@+id/listaEmails"
-            tools:listitem="@layout/activity_listadapter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/azul"
+            android:cacheColorHint="#000000"
             android:divider="@android:color/transparent"
             android:dividerHeight="10dp"
-            android:background="@color/azul"
-            android:cacheColorHint="#000000" />
+            tools:listitem="@layout/activity_listadapter" />
     </LinearLayout>
 
 

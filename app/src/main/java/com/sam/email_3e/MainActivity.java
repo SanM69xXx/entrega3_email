@@ -45,16 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 "3:33 PM",
                 "00:01",
         };
-        Boolean[] reenviado = {
-                true,
-                false,
-                true,
-                true,
-                true,
-        };
+
         leido = new boolean[nombresEmail.length];
 
-        activity_listadapter emails = new activity_listadapter(MainActivity.this, nombresEmail,horas,fotosEmail,descripciones, reenviado, leido);
+        activity_listadapter emails = new activity_listadapter(MainActivity.this, nombresEmail,horas,fotosEmail,descripciones,leido);
         listaEmails = (ListView) findViewById(R.id.listaEmails);
         listaEmails.setAdapter(emails);
 
@@ -67,8 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 SendInfo.putExtra("emisor", nombresEmail[position])
                         .putExtra("hora", horas[position])
                         .putExtra("foto", fotosEmail[position])
-                        .putExtra("asunto", descripciones[position])
-                        .putExtra("reenviado:", reenviado[position]);
+                        .putExtra("asunto", descripciones[position]);
                 startActivity(SendInfo);
             }
         });
